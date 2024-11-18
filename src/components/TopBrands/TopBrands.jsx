@@ -1,5 +1,6 @@
+import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
-
+import './TopBrands.css';
 
 const TopBrands = () => {
     return (
@@ -41,6 +42,16 @@ const TopBrands = () => {
                 </div>
             </div>
             </div>
+           <section className="mt-10">
+           <Marquee pauseOnHover>
+            <Link to='/brands'> <img className="mr-7" src="https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp" alt="" /></Link>
+             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/Wc04vcJ/fachion.jpg" alt="" /></Link>
+             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/JQVvDgd/images-kitchen.jpg" alt="" /></Link>
+             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/H2v31L4/istockphoto-organic.jpg" alt="" /></Link>
+             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/8jx9PmK/images-gear.png" alt="" /></Link>
+            <Link to='/brands'> <img className="mr-7" src="https://i.ibb.co.com/41bB92m/image-goru.jpg" alt="" /></Link>
+            </Marquee>
+           </section>
         </div>
     );
 };
