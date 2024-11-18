@@ -2,8 +2,14 @@ import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Home from '../components/Home/Home';
 import TopBrands from '../components/TopBrands/TopBrands';
+import BrandSell from '../components/BrandSell/BrandSell';
+import { useLoaderData } from 'react-router-dom';
 
 const HomeLayout = () => {
+    const couponCard = useLoaderData();
+    
+
+
     return (
         <div>
             <header className='w-11/12 mx-auto py-3'>
@@ -13,7 +19,8 @@ const HomeLayout = () => {
             <Home></Home>
             <section>
             <TopBrands></TopBrands>    
-            </section>    
+            </section>
+            <BrandSell couponCard={couponCard}></BrandSell>    
             </main>
         </div>
     );

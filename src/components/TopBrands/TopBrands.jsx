@@ -42,7 +42,7 @@ const TopBrands = () => {
                 </div>
             </div>
             </div>
-           <section className="mt-10">
+           <section className="mt-10 img">
            <Marquee pauseOnHover>
             <Link to='/brands'> <img className="mr-7" src="https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp" alt="" /></Link>
              <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/Wc04vcJ/fachion.jpg" alt="" /></Link>
