@@ -12,7 +12,7 @@ const HomeLayout = () => {
 
     return (
         <div>
-            <header className='w-11/12 mx-auto py-3'>
+            <header className='w-11/12 mx-auto py-4'>
             <Navbar></Navbar>    
             </header>
             <main className='w-11/12 mx-auto'>
