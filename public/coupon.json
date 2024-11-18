@@ -1,0 +1,118 @@
+[
+    {
+        "_id": "1",
+        "brand_name": "TechDeals",
+        "rating": 4.5,
+        "description": "TechDeals offers unbeatable discounts on gadgets and electronics, perfect for tech enthusiasts and professionals alike.",
+        "brand_logo": "https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp",
+        "coupons": [
+            {
+                "coupon_code": "TECH20",
+                "description": "Save 20% on all gadgets and accessories with this exclusive offer.",
+                "expiry_date": "2024-12-31",
+                "condition": "Minimum purchase $100",
+                "coupon_type": "Percentage Discount"
+            }
+            
+        ],
+        "shop_link": "https://example.com/techdeals",
+        "category": "Electronics",
+        "isSaleOn": true
+    },
+    {
+        "_id": "2",
+        "brand_name": "FashionFrenzy",
+        "rating": 4.8,
+        "description": "Find the latest fashion trends, stylish outfits, and exclusive discounts on trendy apparel and accessories.",
+        "brand_logo": "https://i.ibb.co.com/Wc04vcJ/fachion.jpg",
+        "coupons": [
+            {
+                "coupon_code": "STYLE10",
+                "description": "Get 10% off your first purchase with this stylish discount code.",
+                "expiry_date": "2025-01-15",
+                "condition": "Valid for first-time users",
+                "coupon_type": "Percentage Discount"
+            } 
+        ],
+        "shop_link": "https://example.com/fashionfrenzy",
+        "category": "Clothing",
+        "isSaleOn": true
+    },
+    {
+        "_id": "3",
+        "brand_name": "KitchenCorner",
+        "rating": 4.3,
+        "description": "Upgrade your cooking experience with premium cookware, kitchen tools, and exclusive deals for home chefs.",
+        "brand_logo": "https://i.ibb.co.com/JQVvDgd/images-kitchen.jpg",
+        "coupons": [
+            {
+                "coupon_code": "COOK15",
+                "description": "Enjoy 15% off premium cookware and elevate your cooking skills.",
+                "expiry_date": "2024-05-20",
+                "condition": "Valid on selected items",
+                "coupon_type": "Percentage Discount"
+            }
+        ],
+        "shop_link": "https://example.com/kitchencorner",
+        "category": "Home & Kitchen",
+        "isSaleOn": false
+    },
+    {
+        "_id": "4",
+        "brand_name": "GroceryGenius",
+        "rating": 4.7,
+        "description": "Get fresh groceries, quality produce, and unbeatable deals delivered straight to your doorstep quickly.",
+        "brand_logo": "https://i.ibb.co.com/H2v31L4/istockphoto-organic.jpg",
+        "coupons": [
+            {
+                "coupon_code": "FRESH10",
+                "description": "Receive 10% off fresh produce and groceries with this fantastic coupon.",
+                "expiry_date": "2024-04-15",
+                "condition": "Minimum purchase $50",
+                "coupon_type": "Percentage Discount"
+            }
+        ],
+        "shop_link": "https://example.com/grocerygenius",
+        "category": "Groceries",
+        "isSaleOn": true
+    },
+    {
+        "_id": "5",
+        "brand_name": "FitGear",
+        "rating": 4.2,
+        "description": "Stay active and healthy with affordable fitness gear, equipment, and great discounts for everyone.",
+        "brand_logo": "https://i.ibb.co.com/8jx9PmK/images-gear.png",
+        "coupons": [
+            {
+                "coupon_code": "FIT25",
+                "description": "Get 25% off high-quality fitness gear with this amazing discount.",
+                "expiry_date": "2024-08-31",
+                "condition": "Valid on orders above $100",
+                "coupon_type": "Percentage Discount"
+            }
+        ],
+        "shop_link": "https://example.com/fitgear",
+        "category": "Fitness",
+        "isSaleOn": false
+    },
+    {
+        "_id": "6",
+        "brand_name": "GadgetGuru",
+        "rating": 4.6,
+        "description": "Exclusive deals on gadgets and accessories for all tech enthusiasts worldwide.",
+        "brand_logo": "https://i.ibb.co.com/41bB92m/image-goru.jpg",
+        "coupons": [
+          {
+            "coupon_code": "GURU15",
+            "description": "Save 15% on selected gadgets and accessories with this coupon.",
+            "expiry_date": "2024-10-01",
+            "condition": "Minimum purchase $150",
+            "coupon_type": "Percentage Discount"
+          }
+        ],
+        "shop_link": "https://example.com/gadgetguru",
+        "category": "Electronics",
+        "isSaleOn": true
+      }
+      
+]
