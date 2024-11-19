@@ -5,6 +5,7 @@ import BrandDetails from "../components/BrandDetails/BrandDetails";
 import Error from "../components/Error/Error";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import MyProfile from "../components/MyProfile/MyProfile";
 
 const router = createBrowserRouter([
     {
@@ -29,6 +30,12 @@ const router = createBrowserRouter([
     {
       path: '/register',
       element: <Register></Register>
+    },
+    {
+      path: '/profile',
+      element: <privateRoutes>
+        <MyProfile></MyProfile>
+      </privateRoutes>
     },
     {
       path: '*',

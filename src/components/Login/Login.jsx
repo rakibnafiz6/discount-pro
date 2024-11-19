@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
-    const {signUpUser} = useContext(AuthContext);
+    const {signUpUser, signInGoogle, user} = useContext(AuthContext);
     const navigate = useNavigate();
-
+    const provider = new GoogleAuthProvider();
  const handleSubmit = (e)=>{
     e.preventDefault();
     const email = e.target.email.value;
@@ -16,6 +18,21 @@ const Login = () => {
     .then((result)=>{
         console.log(result.user);
     navigate('/');
+    })
+    .catch((error)=>{
+        console.log(error.message);
+        toast.error("user can't login! Please try again.", {
+            position: "top-center",
+            theme: "colored"
+        });
+    })
+ }
+
+ const handleGoogle = ()=>{
+    signInGoogle(provider)
+    .then((result)=>{
+        console.log(result.user);
+        navigate('/');
     })
     .catch((error)=>{
         console.log(error.message);
@@ -49,7 +66,8 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn bg-neutral text-white">Login</button>
+                                <button onClick={handleGoogle} className="btn bg-neutral text-white">Login With Google</button>
                             </div>
                         </form>
                     </div>

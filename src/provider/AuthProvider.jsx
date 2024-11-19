@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.init";
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
 
 export const AuthContext = createContext(null);
@@ -16,7 +16,14 @@ const AuthProvider = ({children}) => {
     const signOutUser = ()=>{
         return signOut(auth);
     }
-   
+    const signInGoogle = (Provider)=>{
+        signInWithPopup(auth, Provider);
+    }
+
+    // if(!password.length === 6){
+    //     console.log('password at least 6 character');
+    //     return;
+    // }
 
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser =>{
@@ -35,7 +42,8 @@ const AuthProvider = ({children}) => {
         createUser,
         user,
         signUpUser,
-        signOutUser
+        signOutUser,
+        signInGoogle
     }
     return (
        <AuthContext.Provider value={authInfo}>

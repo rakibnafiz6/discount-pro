@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext); 
-
+    const {createUser, signInGoogle} = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const navigate = useNavigate(); 
+    const provider = new GoogleAuthProvider();
 
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -13,14 +17,40 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, photo, email, password);
+        if(password.length < 6){
+            setError('password at least 6 character');
+            return;
+        }
+        const regEx = /^(?=.*[a-z])(?=.*[A-Z]).*$/;
+        if(!regEx.test(password)){
+            setError('At least one uppercase and one lowercase');
+            return;
+        }
         createUser(email, password)
         .then(result =>{
             console.log(result.user)
+            navigate('/');
         })
         .catch(error =>{
             console.log(error.message);
+            toast.error(error.message, {
+                position: 'top-center',
+                theme: 'colored'
+            })
         })
     }
+
+    const handleGoogle = ()=>{
+        signInGoogle(provider)
+        .then((result)=>{
+            console.log(result.user);
+            navigate('/');
+        })
+        .catch((error)=>{
+            console.log(error.message);
+        })
+     }
+
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
@@ -54,9 +84,11 @@ const Register = () => {
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <p className="text-red-600">{error}</p>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn bg-neutral text-white">Register</button>
+                                <button onClick={handleGoogle} className="btn bg-neutral text-white">Register With Google</button>
                             </div>
                         </form>
                         <p className="text-center pb-2">Already have an account please! <Link className="text-red-600" to='/login'>Login</Link></p>

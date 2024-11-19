@@ -41,7 +41,7 @@ const Navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <NavLink to='/'><li>Home</li></NavLink>
         <NavLink to='/brands'><li>Brands</li></NavLink>
-        <NavLink to='/my-profile'><li>My-profile</li></NavLink>
+        <NavLink to='/profile'><li>MyProfile</li></NavLink>
         {/* <NavLink><li>About Dev</li></NavLink> */}
       </ul>
     </div>
@@ -51,7 +51,7 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1 flex items-center">
         <FaHouseChimneyMedical /><li><NavLink to='/'>Home</NavLink></li>
         <FaHouseChimneyMedical /><li><NavLink to='/brands'>Brands</NavLink></li>
-        <FaHouseChimneyMedical /><li><NavLink to='/my-profile'>My-profile</NavLink></li>
+        <FaHouseChimneyMedical /><li><NavLink to='/profile'>MyProfile</NavLink></li>
         {/* <FaHouseChimneyMedical /> <li><NavLink>About Dev</NavLink></li> */}
     </ul>
   </div>
