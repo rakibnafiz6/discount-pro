@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../layouts/HomeLayout";
 import BrandLayout from "../layouts/BrandLayout";
 import BrandDetails from "../components/BrandDetails/BrandDetails";
+import Error from "../components/Error/Error";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -16,7 +19,20 @@ const router = createBrowserRouter([
     },
     {
         path: '/brand/:id',
-        element: <BrandDetails></BrandDetails>
+        element: <BrandDetails></BrandDetails>,
+        loader: ()=> fetch('/coupon.json')
+    },
+    {
+      path: '/login',
+      element: <Login></Login>
+    },
+    {
+      path: '/register',
+      element: <Register></Register>
+    },
+    {
+      path: '*',
+      element: <Error></Error>
     }
   ]);
 

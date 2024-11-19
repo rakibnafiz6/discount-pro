@@ -12,6 +12,13 @@
                 "expiry_date": "2024-12-31",
                 "condition": "Minimum purchase $100",
                 "coupon_type": "Percentage Discount"
+            },
+            {
+                "coupon_code": "FREESHIP",
+                "description": "Free shipping on orders above $25.",
+                "expiry_date": "2024-11-30",
+                "condition": "No minimum purchase required",
+                "coupon_type": "Shipping"
             }
             
         ],
@@ -32,7 +39,14 @@
                 "expiry_date": "2025-01-15",
                 "condition": "Valid for first-time users",
                 "coupon_type": "Percentage Discount"
-            } 
+            },
+            {
+                "coupon_code": "BOGO50",
+                "description": "Buy one, get one 50% off.",
+                "expiry_date": "2024-12-15",
+                "condition": "Only on selected items",
+                "coupon_type": "Deal"
+            }
         ],
         "shop_link": "https://example.com/fashionfrenzy",
         "category": "Clothing",
@@ -51,6 +65,13 @@
                 "expiry_date": "2024-05-20",
                 "condition": "Valid on selected items",
                 "coupon_type": "Percentage Discount"
+            },
+            {
+                "coupon_code": "GIFT20",
+                "description": "20% off on gift cards.",
+                "expiry_date": "2025-01-01",
+                "condition": "Gift cards only",
+                "coupon_type": "Special"
             }
         ],
         "shop_link": "https://example.com/kitchencorner",
@@ -70,6 +91,13 @@
                 "expiry_date": "2024-04-15",
                 "condition": "Minimum purchase $50",
                 "coupon_type": "Percentage Discount"
+            },
+            {
+                "coupon_code": "KITCHEN30",
+                "description": "30% off on selected appliances.",
+                "expiry_date": "2024-11-30",
+                "condition": "Appliances only",
+                "coupon_type": "Deal"
             }
         ],
         "shop_link": "https://example.com/grocerygenius",
@@ -89,6 +117,13 @@
                 "expiry_date": "2024-08-31",
                 "condition": "Valid on orders above $100",
                 "coupon_type": "Percentage Discount"
+            },
+            {
+                "coupon_code": "GYM50",
+                "description": "$50 off on gym memberships.",
+                "expiry_date": "2024-12-31",
+                "condition": "Annual memberships only",
+                "coupon_type": "Fixed Amount"
             }
         ],
         "shop_link": "https://example.com/fitgear",
@@ -108,6 +143,13 @@
             "expiry_date": "2024-10-01",
             "condition": "Minimum purchase $150",
             "coupon_type": "Percentage Discount"
+          },
+          {
+            "coupon_code": "TOYSFREE",
+            "description": "Free toys with orders above $30.",
+            "expiry_date": "2024-11-30",
+            "condition": "Minimum purchase $30",
+            "coupon_type": "Gift"
           }
         ],
         "shop_link": "https://example.com/gadgetguru",

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Home from '../components/Home/Home';
 import TopBrands from '../components/TopBrands/TopBrands';
@@ -8,7 +8,6 @@ import { useLoaderData } from 'react-router-dom';
 const HomeLayout = () => {
     const couponCard = useLoaderData();
     
-
 
     return (
         <div>

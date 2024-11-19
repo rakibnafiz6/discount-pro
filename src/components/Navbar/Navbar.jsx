@@ -1,7 +1,21 @@
+import { useContext } from "react";
 import { FaHouseChimneyMedical } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const {user,signOutUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+    const handleSignOut = ()=>{
+      signOutUser()
+      .then(()=>{
+        console.log('signOut Successfully');
+        navigate('/');
+      })
+      .catch(error=>console.log(error.message))
+    }
+
     return (
         <div>
 
@@ -42,8 +56,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn mr-2">Login</a>
-    <a className="btn">Registration</a>
+    {
+      user ? <Link to='/login' onClick={handleSignOut} className="btn bg-neutral text-white">Log-out</Link> :
+     <div> <Link to='/login' className="btn mr-2 bg-neutral text-white">Login</Link>
+    <Link to='/register' className="btn mr-2 bg-neutral text-white">Registration</Link></div>
+    }
+    
+    
+    
   </div>
 </div>
         </div>

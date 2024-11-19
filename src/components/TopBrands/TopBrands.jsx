@@ -7,7 +7,7 @@ const TopBrands = () => {
         <div className="">
  
             <h2 className="text-center font-bold text-2xl mb-4">Exclusive Deals and Discounts</h2>
-            <div className="flex gap-6">
+            <div className="flex flex-col lg:flex-row gap-6">
             <div className="card bg-base-100 w-96 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">TechDeals</h2>

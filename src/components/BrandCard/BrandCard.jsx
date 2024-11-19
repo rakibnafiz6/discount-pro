@@ -8,7 +8,7 @@ const BrandCard = () => {
     return (
         <div className="w-9/12 mx-auto">
             {
-                BrandCard.map(card => <div key={card._id} className="card card-compact bg-base-100  shadow-xl p-7 w-[700px] mb-10">
+                BrandCard.map(card => <div key={card._id} className="card card-compact bg-base-100  shadow-xl p-7 md:w-[700px] mb-10">
                     <label className="input input-bordered flex items-center gap-2">
                         <input type="text" className="grow" placeholder="Search" />
                         <svg
@@ -40,7 +40,7 @@ const BrandCard = () => {
                     </div>
                     {
                     card.isSaleOn && <div className="card-actions items-center mt-6">
-                    <Link><button className="btn btn-primary">View Coupons</button></Link>
+                    <Link to={`/brand/${card._id}`}><button className="btn btn-primary">View Coupons</button></Link>
                     <div className="badge badge-secondary">Sale is On!</div>
                      </div>
                     }
