@@ -1,7 +1,9 @@
+import 'animate.css';
+
 const Home = () => {
     return (
         <div>
-            <div className="carousel w-full">
+            <div className="animate__animated animate__bounce carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co.com/w0Fm4Qz/voucher.jpg"

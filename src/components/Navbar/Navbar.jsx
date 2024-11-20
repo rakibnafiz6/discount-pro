@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { FaHouseChimneyMedical } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-
+import 'animate.css';
 const Navbar = () => {
   const {user,signOutUser} = useContext(AuthContext);
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* <NavLink><li>About Dev</li></NavLink> */}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">Coupon</a>
+    <a className="animate__animated animate__bounce btn btn-ghost text-xl">Coupon</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 flex items-center">

@@ -1,12 +1,13 @@
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 import './TopBrands.css';
+import 'animate.css';
 
 const TopBrands = () => {
     return (
         <div className="">
  
-            <h2 className="text-center font-bold text-2xl mb-4">Exclusive Deals and Discounts</h2>
+            <h2 className="animate__animated animate__swing text-center font-bold text-2xl mb-4">Exclusive Deals and Discounts</h2>
             <div className="flex flex-col lg:flex-row gap-6">
             <div className="card bg-base-100 w-96 shadow-xl">
                 <div className="card-body">
