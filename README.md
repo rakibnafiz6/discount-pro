@@ -3,7 +3,7 @@
 <li>The purpose of Discount PRO is to create a user-friendly coupon-collecting application where users can easily find, save, and use discount coupons for popular e-commerce stores in Bangladesh. By consolidating coupons from various brands, the app helps users save money and streamline their shopping experience while offering a smooth and secure login system through Firebase authentication.</li>
 <h2>Live URL:</h2>
 <h2>Key Features</h2>
-<li><h2>Secure Authentication:</h2> Login/Registration via email and Google (Firebase).</li>
+<span><h4>Secure Authentication:</h4> <li> Login/Registration via email and Google (Firebase).</li></span>
 <li>Home Page: Brand showcase with sliders and sale highlights.</li>
 <li>Coupon Details: Private route for coupon info with "Copy Code" and "Use Now" buttons.</li>
 <li>User Profile: View and update user details (photo, name).</li>
