@@ -45,7 +45,7 @@ const Navbar = () => {
         {/* <NavLink><li>About Dev</li></NavLink> */}
       </ul>
     </div>
-    <a className="animate__animated animate__bounce btn btn-ghost text-xl">Coupon</a>
+    <a className="animate__animated animate__bounce btn btn-neutral text-white text-xl">Coupon</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 flex items-center">

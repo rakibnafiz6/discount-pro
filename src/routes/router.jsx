@@ -7,6 +7,8 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import MyProfile from "../components/MyProfile/MyProfile";
 import PrivateRoutes from "../components/privateRoutes/PrivateRoutes";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
+
 
 const router = createBrowserRouter([
     {
@@ -21,7 +23,9 @@ const router = createBrowserRouter([
     },
     {
         path: '/brand/:id',
-        element: <BrandDetails></BrandDetails>,
+        element: <PrivateRoutes>
+          <BrandDetails></BrandDetails>
+        </PrivateRoutes>,
         loader: ()=> fetch('/coupon.json')
     },
     {
@@ -38,6 +42,10 @@ const router = createBrowserRouter([
         <MyProfile></MyProfile>
         </PrivateRoutes>
       
+    },
+    {
+      path: '/updateProfile',
+      element: <UpdateProfile></UpdateProfile>
     },
     {
       path: '*',

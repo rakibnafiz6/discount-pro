@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import './TopBrands.css';
 import 'animate.css';
 
-const TopBrands = () => {
+const TopBrands = ({couponCard}) => {
+    const {_id} = couponCard;
+    console.log(couponCard);
     return (
         <div className="">
  
@@ -16,7 +18,7 @@ const TopBrands = () => {
                     <li className="list-disc text-gray-500 text-base font-semibold">Category: Electronics</li>
                     <li className="list-disc text-gray-500 text-base font-semibold">Description: Unbeatable discounts on gadgets and electronics for tech enthusiasts.</li>
                     <li className="list-disc text-gray-500 text-base font-semibold">Coupon: TECH20 - Save 20% (Min purchase $100)</li>
-                    <li className="list-disc text-gray-500 text-base font-semibold">Shop Now: <Link className="text-blue-600">Visit TechDeals</Link></li>
+                    <li className="list-disc text-gray-500 text-base font-semibold">Shop Now: <Link className="">Visit TechDeals</Link></li>
                     
                 </div>
             </div>
@@ -45,12 +47,12 @@ const TopBrands = () => {
             </div>
            <section className="mt-10 img">
            <Marquee pauseOnHover>
-            <Link to='/brands'> <img className="mr-7" src="https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp" alt="" /></Link>
-             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/Wc04vcJ/fachion.jpg" alt="" /></Link>
-             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/JQVvDgd/images-kitchen.jpg" alt="" /></Link>
-             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/H2v31L4/istockphoto-organic.jpg" alt="" /></Link>
-             <Link to='/brands'><img className="mr-7" src="https://i.ibb.co.com/8jx9PmK/images-gear.png" alt="" /></Link>
-            <Link to='/brands'> <img className="mr-7" src="https://i.ibb.co.com/41bB92m/image-goru.jpg" alt="" /></Link>
+            <Link to={`/brand/${_id}`}> <img className="mr-7" src="https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp" alt="" /></Link>
+             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/Wc04vcJ/fachion.jpg" alt="" /></Link>
+             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/JQVvDgd/images-kitchen.jpg" alt="" /></Link>
+             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/H2v31L4/istockphoto-organic.jpg" alt="" /></Link>
+             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/8jx9PmK/images-gear.png" alt="" /></Link>
+            <Link to={`/brand/${_id}`}> <img className="mr-7" src="https://i.ibb.co.com/41bB92m/image-goru.jpg" alt="" /></Link>
             </Marquee>
            </section>
         </div>

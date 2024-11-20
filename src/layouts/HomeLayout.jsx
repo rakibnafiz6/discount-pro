@@ -17,7 +17,7 @@ const HomeLayout = () => {
             <main className='w-11/12 mx-auto'>
             <Home></Home>
             <section>
-            <TopBrands></TopBrands>    
+            <TopBrands couponCard={couponCard}></TopBrands>    
             </section>
             <BrandSell couponCard={couponCard}></BrandSell>    
             </main>

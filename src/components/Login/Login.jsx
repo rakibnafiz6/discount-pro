@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { GoogleAuthProvider, sendPasswordResetEmail } from "firebase/auth";
 import Navbar from "../Navbar/Navbar";
@@ -8,7 +8,7 @@ import auth from "../../firebase/firebase.init";
 
 
 const Login = () => {
-    const {signUpUser, signInGoogle, forgetPassword, user} = useContext(AuthContext);
+    const {signUpUser, signInGoogle,} = useContext(AuthContext);
     const emailRef = useRef();
     const navigate = useNavigate();
     const provider = new GoogleAuthProvider();
@@ -16,11 +16,14 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // console.log(email, password);
+
     signUpUser(email, password)
     .then((result)=>{
         console.log(result.user);
     navigate('/');
+    toast('Welcome to your project',{
+        position: "top-center"
+    });
     })
     .catch((error)=>{
         console.log(error.message);
@@ -43,6 +46,7 @@ const Login = () => {
  }
 
  const handleForgetPassword = ()=>{
+    
     console.log('forget password', emailRef.current);
     const email = emailRef.current.value;
     sendPasswordResetEmail(auth, email)
@@ -52,7 +56,10 @@ const Login = () => {
             theme: "colored"
         });
     })
-    .catch(error => console.log(error.message));
+    .catch(error => toast.error(error.message,{
+        position: "top-center",
+        theme: "colored"
+    }));
  }
 
 
@@ -81,7 +88,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                                 <label onClick={handleForgetPassword} className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                    <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                             </div>
                             <div className="form-control mt-6">

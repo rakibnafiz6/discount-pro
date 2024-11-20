@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const MyProfile = () => {
@@ -29,12 +29,11 @@ const MyProfile = () => {
                     <p>User Email: {user?.email}</p>
                 
                 </div>
+                <Link to='/updateProfile' className="btn bg-neutral text-white mb-2 mx-2">
+                Update Profile
+                </Link>
             </div>
-            {/* <div>
-                <img src={user?.photoURL} alt="" />
-                <h2>{user?.displayName}</h2>
-                <p>{user?.email}</p>
-            </div> */}
+            
         </div>
     );
 };
