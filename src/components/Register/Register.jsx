@@ -2,57 +2,75 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, updateProfile } from "firebase/auth";
+import Navbar from "../Navbar/Navbar";
+import auth from "../../firebase/firebase.init";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
-    const {createUser, signInGoogle} = useContext(AuthContext);
+    const { createUser, signInGoogle } = useContext(AuthContext);
     const [error, setError] = useState('');
-    const navigate = useNavigate(); 
+    const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
     const provider = new GoogleAuthProvider();
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, photo, email, password);
-        if(password.length < 6){
+
+
+        if (password.length < 6) {
             setError('password at least 6 character');
             return;
         }
         const regEx = /^(?=.*[a-z])(?=.*[A-Z]).*$/;
-        if(!regEx.test(password)){
+        if (!regEx.test(password)) {
             setError('At least one uppercase and one lowercase');
             return;
         }
         createUser(email, password)
-        .then(result =>{
-            console.log(result.user)
-            navigate('/');
-        })
-        .catch(error =>{
-            console.log(error.message);
-            toast.error(error.message, {
-                position: 'top-center',
-                theme: 'colored'
+            .then(result => {
+                console.log(result.user)
+                navigate('/');
+                const profile = {
+                    displayName: name,
+                    photoURL: photo
+                }
+                updateProfile(auth.currentUser, profile)
+                    .then(() => {
+                        console.log('user profile update')
+                    })
+                    .catch(error => console.log(error.message));
             })
-        })
+            .catch(error => {
+                console.log(error.message);
+                toast.error(error.message, {
+                    position: 'top-center',
+                    theme: 'colored'
+                })
+            })
     }
 
-    const handleGoogle = ()=>{
+    const handleGoogle = () => {
         signInGoogle(provider)
-        .then((result)=>{
-            console.log(result.user);
-            navigate('/');
-        })
-        .catch((error)=>{
-            console.log(error.message);
-        })
-     }
+            .then((result) => {
+                console.log(result.user);
+                navigate('/');
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
+    }
 
     return (
         <div>
+            <nav className="py-4 bg-base-200">
+                <Navbar></Navbar>
+            </nav>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
@@ -79,11 +97,15 @@ const Register = () => {
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            <div className="form-control relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className=" input input-bordered" required />
+                                <button onClick={() => setShowPassword(!showPassword)}
+                                    className="btn btn-xs absolute right-2 top-12">
+                                    {showPassword? <FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>}
+                                </button>
                                 <p className="text-red-600">{error}</p>
                             </div>
                             <div className="form-control mt-6">

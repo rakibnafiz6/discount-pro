@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { GoogleAuthProvider } from "firebase/auth";
+import Navbar from "../Navbar/Navbar";
 
 
 const Login = () => {
@@ -42,6 +43,9 @@ const Login = () => {
 
     return (
         <div>
+        <nav className="py-4 bg-base-200">
+            <Navbar></Navbar>
+        </nav>
             <div className="hero bg-base-200 min-h-screen">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
