@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
+import { Helmet } from "react-helmet-async";
 
 const BrandDetails = () => {
     const params = useParams();
@@ -9,6 +10,9 @@ const BrandDetails = () => {
     
     return (
         <div>
+          <Helmet>
+            <title>Discount PRO/BrandDetails</title>
+          </Helmet>
           <nav className="py-4">
           <Navbar></Navbar>
           </nav>

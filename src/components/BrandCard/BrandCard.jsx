@@ -7,6 +7,7 @@ const BrandCard = () => {
 
     return (
         <div className="w-9/12 mx-auto">
+            <h2 className="flex justify-center mt-2 text-blue-700 font-bold">Page Title: {pathname}</h2>
             {
                 BrandCard.map(card => <div key={card._id} className="card card-compact bg-base-100  shadow-xl p-7 md:w-[700px] mb-10">
                     <label className="input input-bordered flex items-center gap-2">
@@ -22,8 +23,8 @@ const BrandCard = () => {
                                 clipRule="evenodd" />
                         </svg>
                     </label>
-                    <h2 className="flex justify-center mt-2 font-bold">{pathname}</h2>
-                    <div className="flex items-center">
+                    
+                    <div className="flex items-center mt-2">
                         <div className="">
                             <img className="w-15 h-15 rounded-full" src={card.brand_logo} alt="" />
                             <h2 className="font-semibold ml-8 mt-2">{card.brand_name}</h2>

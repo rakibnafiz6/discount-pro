@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { GoogleAuthProvider, sendPasswordResetEmail } from "firebase/auth";
 import Navbar from "../Navbar/Navbar";
 import auth from "../../firebase/firebase.init";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -65,6 +66,9 @@ const Login = () => {
 
     return (
         <div>
+        <Helmet>
+            <title>Discount PRO/Login</title>
+        </Helmet>
         <nav className="py-4 bg-base-200">
             <Navbar></Navbar>
         </nav>

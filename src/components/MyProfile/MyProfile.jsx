@@ -3,6 +3,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import Navbar from "../Navbar/Navbar";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
     const { user } = useContext(AuthContext);
@@ -15,6 +16,9 @@ const MyProfile = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Discount PRO/MyProfile</title>
+            </Helmet>
             <nav className="py-4">
                 <Navbar></Navbar>
             </nav>

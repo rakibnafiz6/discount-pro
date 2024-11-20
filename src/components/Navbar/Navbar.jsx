@@ -42,7 +42,6 @@ const Navbar = () => {
         <NavLink to='/'><li>Home</li></NavLink>
         <NavLink to='/brands'><li>Brands</li></NavLink>
         <NavLink to='/profile'><li>MyProfile</li></NavLink>
-        {/* <NavLink><li>About Dev</li></NavLink> */}
       </ul>
     </div>
     <a className="animate__animated animate__bounce btn btn-neutral text-white text-xl">Coupon</a>

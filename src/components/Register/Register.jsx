@@ -6,6 +6,7 @@ import { GoogleAuthProvider, updateProfile } from "firebase/auth";
 import Navbar from "../Navbar/Navbar";
 import auth from "../../firebase/firebase.init";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { createUser, signInGoogle } = useContext(AuthContext);
@@ -68,6 +69,9 @@ const Register = () => {
 
     return (
         <div>
+        <Helmet>
+            <title>Discount PRO/Register</title>
+        </Helmet>
             <nav className="py-4 bg-base-200">
                 <Navbar></Navbar>
             </nav>
