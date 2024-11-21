@@ -1,9 +1,9 @@
 <h2>Project Name: Discount PRO</h2>
 <h2>Purpose This Project</h2>
 <li>The purpose of Discount PRO is to create a user-friendly coupon-collecting application where users can easily find, save, and use discount coupons for popular e-commerce stores in Bangladesh. By consolidating coupons from various brands, the app helps users save money and streamline their shopping experience while offering a smooth and secure login system through Firebase authentication.</li>
-<h2>Live URL:</h2>
+<h2>Live URL: https://rakib-assignment-09.surge.sh/</h2>
 <h2>Key Features</h2>
-<span><h4>Secure Authentication:</h4></span><span><li> Login/Registration via email and Google (Firebase).</li></span>
+<li>Secure Authentication: Login/Registration via email and Google (Firebase).</li>
 <li>Home Page: Brand showcase with sliders and sale highlights.</li>
 <li>Coupon Details: Private route for coupon info with "Copy Code" and "Use Now" buttons.</li>
 <li>User Profile: View and update user details (photo, name).</li>

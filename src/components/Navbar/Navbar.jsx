@@ -3,6 +3,8 @@ import { FaHouseChimneyMedical } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import 'animate.css';
+import { CgProfile } from "react-icons/cg";
+import { TbBrandPagekit } from "react-icons/tb";
 const Navbar = () => {
   const {user,signOutUser} = useContext(AuthContext);
   const navigate = useNavigate();
@@ -48,10 +50,10 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 flex items-center">
-        <FaHouseChimneyMedical /><li><NavLink to='/'>Home</NavLink></li>
-        <FaHouseChimneyMedical /><li><NavLink to='/brands'>Brands</NavLink></li>
-        <FaHouseChimneyMedical /><li><NavLink to='/profile'>MyProfile</NavLink></li>
-        {/* <FaHouseChimneyMedical /> <li><NavLink>About Dev</NavLink></li> */}
+        <li><NavLink to='/'><FaHouseChimneyMedical />Home</NavLink></li>
+       <li><NavLink to='/brands'><TbBrandPagekit></TbBrandPagekit>Brands</NavLink></li>
+        <li><NavLink to='/profile'><CgProfile></CgProfile>MyProfile</NavLink></li>
+        
     </ul>
   </div>
   <div className="navbar-end">

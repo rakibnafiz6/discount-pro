@@ -16,7 +16,7 @@ const UpdateProfile = () => {
         }
         updateProfile(auth.currentUser, profile)
         .then(()=>{
-            console.log('update profile information');
+            
             navigate('/profile');
         })
         .catch(error => console.log(error.message));

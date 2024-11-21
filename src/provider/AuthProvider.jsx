@@ -24,9 +24,7 @@ const AuthProvider = ({children}) => {
         setLoader(true);
        return signInWithPopup(auth, Provider);
     }
-    // const forgetPassword = (email)=>{
-    //     return sendPasswordResetEmail(auth, email);
-    // }
+    
 
 
     useEffect(()=>{
@@ -50,7 +48,7 @@ const AuthProvider = ({children}) => {
         signUpUser,
         signOutUser,
         signInGoogle,
-        // forgetPassword
+        
     }
     return (
        <AuthContext.Provider value={authInfo}>

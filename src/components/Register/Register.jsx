@@ -34,8 +34,8 @@ const Register = () => {
             return;
         }
         createUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                
                 navigate('/');
                 const profile = {
                     displayName: name,
@@ -43,12 +43,12 @@ const Register = () => {
                 }
                 updateProfile(auth.currentUser, profile)
                     .then(() => {
-                        console.log('user profile update')
+                        
                     })
                     .catch(error => console.log(error.message));
             })
             .catch(error => {
-                console.log(error.message);
+                
                 toast.error(error.message, {
                     position: 'top-center',
                     theme: 'colored'
@@ -58,8 +58,8 @@ const Register = () => {
 
     const handleGoogle = () => {
         signInGoogle(provider)
-            .then((result) => {
-                console.log(result.user);
+            .then(() => {
+                
                 navigate('/');
             })
             .catch((error) => {

@@ -6,6 +6,7 @@ import BrandSell from '../components/BrandSell/BrandSell';
 import { useLoaderData } from 'react-router-dom';
 import Footer from '../components/Footer/Footer';
 import { Helmet } from 'react-helmet-async';
+import Testimonial from '../components/Testimonial/Testimonial';
 
 const HomeLayout = () => {
     const couponCard = useLoaderData();
@@ -24,7 +25,10 @@ const HomeLayout = () => {
             <section>
             <TopBrands couponCard={couponCard}></TopBrands>    
             </section>
-            <BrandSell couponCard={couponCard}></BrandSell>    
+            <BrandSell couponCard={couponCard}></BrandSell>
+            <section className='mt-14'>
+            <Testimonial></Testimonial>    
+            </section>    
             </main>
             <footer className='mt-24'>
                 <Footer></Footer>

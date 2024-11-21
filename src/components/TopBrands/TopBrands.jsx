@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import './TopBrands.css';
 import 'animate.css';
 
-const TopBrands = ({couponCard}) => {
-    const {_id} = couponCard;
-    console.log(couponCard);
+const TopBrands = () => {
     return (
         <div className="">
  
@@ -47,12 +45,12 @@ const TopBrands = ({couponCard}) => {
             </div>
            <section className="mt-10 img">
            <Marquee pauseOnHover>
-            <Link to={`/brand/${_id}`}> <img className="mr-7" src="https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp" alt="" /></Link>
-             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/Wc04vcJ/fachion.jpg" alt="" /></Link>
-             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/JQVvDgd/images-kitchen.jpg" alt="" /></Link>
-             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/H2v31L4/istockphoto-organic.jpg" alt="" /></Link>
-             <Link to={`/brand/${_id}`}><img className="mr-7" src="https://i.ibb.co.com/8jx9PmK/images-gear.png" alt="" /></Link>
-            <Link to={`/brand/${_id}`}> <img className="mr-7" src="https://i.ibb.co.com/41bB92m/image-goru.jpg" alt="" /></Link>
+            <Link to={`/brand/${'1'}`}> <img className="mr-7" src="https://i.ibb.co.com/zSKLDn7/tech-deal-logo.webp" alt="" /></Link>
+             <Link to={`/brand/${'2'}`}><img className="mr-7" src="https://i.ibb.co.com/Wc04vcJ/fachion.jpg" alt="" /></Link>
+             <Link to={`/brand/${'3'}`}><img className="mr-7" src="https://i.ibb.co.com/JQVvDgd/images-kitchen.jpg" alt="" /></Link>
+             <Link to={`/brand/${'4'}`}><img className="mr-7" src="https://i.ibb.co.com/H2v31L4/istockphoto-organic.jpg" alt="" /></Link>
+             <Link to={`/brand/${'5'}`}><img className="mr-7" src="https://i.ibb.co.com/8jx9PmK/images-gear.png" alt="" /></Link>
+            <Link to={`/brand/${'6'}`}> <img className="mr-7" src="https://i.ibb.co.com/41bB92m/image-goru.jpg" alt="" /></Link>
             </Marquee>
            </section>
         </div>

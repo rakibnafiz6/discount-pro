@@ -9,7 +9,7 @@ const MyProfile = () => {
     const { user } = useContext(AuthContext);
     const { pathname } = useLocation();
     if (pathname === '/profile') {
-        toast("Welcome to PrivateRoute", {
+        toast("Welcome to your profile", {
             position: 'top-center',
 
         });
@@ -22,7 +22,7 @@ const MyProfile = () => {
             <nav className="py-4">
                 <Navbar></Navbar>
             </nav>
-            <div className="card bg-base-100 w-96 shadow-xl ml-40 mt-16">
+            <div className="card bg-base-100 w-96 shadow-xl md:ml-40 mt-16">
                 <figure>
                     <img
                         src={user?.photoURL}
